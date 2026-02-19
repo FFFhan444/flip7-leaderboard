@@ -85,7 +85,7 @@ function App() {
       </div>
 
       {/* Sticky Bottom Controls */}
-      <div className="fixed bottom-0 left-0 right-0 z-10 bg-pastel">
+      <div className="fixed bottom-0 left-0 right-0 z-10 bg-pastel border-t-2 border-dark">
         <div className="max-w-2xl mx-auto px-4 pt-4 pb-8">
           <AddPlayerForm onAddPlayer={addPlayer} />
         </div>
