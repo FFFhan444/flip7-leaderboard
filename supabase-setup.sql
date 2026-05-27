@@ -19,5 +19,9 @@ CREATE POLICY "Allow all operations" ON players
   USING (true)
   WITH CHECK (true);
 
+-- Grant Data API access for the anon and authenticated roles
+-- Required for new Supabase projects created after May 30, 2026
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.players TO anon, authenticated;
+
 -- Enable realtime for the players table
 ALTER PUBLICATION supabase_realtime ADD TABLE players;
