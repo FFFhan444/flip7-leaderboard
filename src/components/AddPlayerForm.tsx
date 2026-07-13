@@ -40,7 +40,6 @@ export function AddPlayerForm({ onAddPlayer }: AddPlayerFormProps) {
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter player name..."
             className="w-full px-4 py-3 border-2 border-dark bg-pastel text-dark placeholder-dark/50 focus:outline-none transition-colors pixel-corners"
-            disabled={status === 'loading'}
           />
           <AnimatePresence>
             {status === 'success' && (
@@ -59,6 +58,7 @@ export function AddPlayerForm({ onAddPlayer }: AddPlayerFormProps) {
         <motion.button
           type="submit"
           disabled={status === 'loading' || !name.trim()}
+          onMouseDown={(e) => e.preventDefault()}
           className="px-6 py-3 bg-dark text-pastel font-semibold flex items-center gap-2 hover:bg-dark-soft transition-colors disabled:opacity-50 disabled:cursor-not-allowed pixel-corners-dark"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
